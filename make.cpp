@@ -1,3 +1,4 @@
+// Hoán đổi hai số a và b 
 #include <iostream>
 using namespace std ; 
 int main()
