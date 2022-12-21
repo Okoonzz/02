@@ -2,6 +2,7 @@
 mà nghịch đảo của nó cũng SNT*/
 #include <iostream>
 #include <iomanip>
+#include <math.h>
 using namespace std;
 int nghichdao(long long n){
 	long long temp;
@@ -13,30 +14,21 @@ int nghichdao(long long n){
 	} 
 	return res;
 }
-void Eratosthenes(long long m, long long n, bool check[] ){
-	for(long long i = m; i <= n; i++){
-			if(check[i]==true){
-				for(long long j = 2*i; j <= n; j += i){
-					check[j]= false;
-				}
-			}
-		}
+bool SNT(int k ){
+	for (int j = 2; j <= sqrt(k); j++) {
+		if (k % j == 0) return false;
+	}
+	return true;
 }
 int main(){
 	int count = 0;
 	long long n ;
 	long long m;
 	cin >> m >> n;
-	bool check[n+1];
 	for(long long i = m; i <= n ; i++){
-		check[i] = true;
-	}
-	Eratosthenes(m, n, check);
-	for(long long i = m; i <= n; i++){
-		if(check[i] == true){
-			nghichdao(i);
-			if(check[nghichdao(i)] == true){
-				count ++;
+		if(SNT(i)){
+			if(SNT(nghichdao(i))){
+				count++;
 			}
 		}
 	}
