@@ -1,6 +1,6 @@
 /* Kiểm tra trong một đoạn có bao nhiêu SNT 
 mà nghịch đảo của nó cũng SNT*/
-/* Tham khảo sàn Eratosthenes: https://vnoi.info/wiki/translate/he/Number-Theory-2.md */
+/* Tham khảo sàng Eratosthenes: https://vnoi.info/wiki/translate/he/Number-Theory-2.md */
 #include <iostream>
 #include <iomanip>
 #include <math.h>
