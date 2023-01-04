@@ -13,8 +13,10 @@ Output: Một số nguyên duy nhất là số bước ít nhất mà Chirox c�
 ban đầu thành dãy đẹp.
 input: 6
 	40 6 40 3 20 1
+output 4
 input: 4
 	2 4 8 16
+output 4
 */
 #include <bits/stdc++.h>
 using namespace std;
