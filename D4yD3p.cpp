@@ -16,36 +16,29 @@ input: 6
 input: 4
 	2 4 8 16
 */
-#include <iostream>
-#include <algorithm>
-#include <vector>
-
+#include <bits/stdc++.h>
 using namespace std;
-
-const int N = 1e6;
-
-vector<int> a(N);
-
 int main(){
-    int n, k; cin >> n >> k;
+	int n;
+	cin >> n;
+	int x;
+	int cnt = 0;
+	set<int> :: iterator ptr;
+	set<int> a;
+	for(int i = 0; i < n; i++){
+		cin >> x;
+		if(x % 2 == 0) a.insert(x);
+	}
+	while (!a.empty()){
+		ptr = a.end();
+		ptr--;
+		int temp = *ptr;
 
-    int pow10[10];
-    pow10[0] = 1;
-    for (int i = 1; i < 10; i++){
-        pow10[i] = pow10[i - 1] * 10;
-    }
-    for (int i = 0; i < n; i++){
-        string s; cin >> s;
-        int len = s.size();
-        for (int j = 0; j < len; j++){
-            a.push_back((9 - (s[j] - '0')) * pow10[len - j - 1]);
-        }
-    }
-    sort(a.begin(), a.end(), greater<int>());
-    long long res = 0;
-    for (int i = 0; i < k; i++){
-        res = res + a[i];
-    }
-    cout << res;
-    return 0;
+		temp /= 2; 
+		cnt++;
+		if(temp % 2 == 0) a.insert(temp);
+		a.erase(*ptr);
+	}
+	cout << cnt;
+	return 0;
 }
