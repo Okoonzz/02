@@ -1,0 +1,37 @@
+Void Try (int i){
+    for(j = <Khả năng 1>; j <= <Khả năng cuối>; j++){
+        if(<chấp thuận khả năng j>){
+            x[i] = <Khả năng j>;
+            if(i == <n>) Result();
+            else Try(i + 1);
+        }
+    }
+}
+
+//Dùng mảng đánh dấu 
+Void Try (int i){
+    for(j = <Khả năng 1>; j <= <Khả năng cuối>; j++){
+        //Mảng đánh dấu
+        if(<chưa xét [j]>){
+            x[i] = <Khả năng j>;
+            chưa xét [j] = false;
+            if(i == <n>) Result();
+            else Try(i + 1);
+            //Xét xong trả lại mảng đánh dấu
+            chưa xét [j] = true;
+        }
+    }
+}
+
+//Áp dụng bài toán tìm bước lớn nhất
+Void Try (int i){
+    for(j = <Khả năng 1>; j <= <Khả năng cuối>; j++){
+        if(<chấp thuận khả năng j>){
+            x[i] = <Khả năng j>;
+            Tính toán gì đó ở vị trí "i"
+            if(i == <n>) Result();
+            else if (Tính toán gì đó ở vị trí "i+1" sau đó so sánh với Result) 
+            Try(i + 1);
+        }
+    }
+}
